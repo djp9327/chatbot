@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block container %}
+
+ <table class="table table-striped">
+   <tr>
+     <th>Question Text</th>
+     <th>Response Text</th>
+   </tr>
+   {% for r in responses %}
+   <tr>
+       <td>{{r.0}}</td>
+       <td>{{r.1}}</td>
+   </tr>
+   {% endfor %}
+</table>
+
+{% endblock %}
