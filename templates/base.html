@@ -1,0 +1,69 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+
+{% block html %}
+<html lang="en">
+
+    {% block head %}
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block title %}{% endblock %}
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        {% block extra_css %}{% endblock %}
+    </head>
+    {% endblock %}
+
+    {% block body %}
+    <body>
+        {% block nav %}
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+
+            {% block nav_content %}
+                {% block navbar_brand %}
+                    <a class="navbar-brand" href="/">Home</a>
+                    <a class="navbar-brand" href="/question/create">Create Question</a>
+                    <a class="navbar-brand" href="/question/list">Question List</a>
+                {% endblock %}
+
+                {% block navbar_collapse %}
+                <div class="collapse navbar-collapse" id="navbar">
+
+                    {% block navbar_collapse_nav %}{% endblock %}
+
+                </div>
+                {% endblock %}
+
+            {% endblock %}
+
+        </nav>
+        {% endblock %}
+
+        <div class="mt-5"></div>
+
+        {% block navbar_after %}{% endblock %}
+
+        {% block body_content %}
+            <div class="container" style="padding-top: 20px;">
+                {% block container %}{% endblock %}
+            </div>
+        {% endblock %}
+
+        {% block foot %}
+            <footer>
+                {% block footer %}{% endblock %}
+            </footer>
+        {% endblock %}
+
+        {% block extra_js %}{% endblock %}
+
+    </body>
+    {% endblock %}
+
+</html>
+{% endblock %}
